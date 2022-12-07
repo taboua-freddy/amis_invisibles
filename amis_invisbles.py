@@ -17,6 +17,11 @@ class AmisInvisible:
     friends_dir = "amis_invisibles"
     members_dir = "members"
     final_file = os.path.join(friends_dir, "final.csv")
+    
+    if not os.path.exists(friends_dir):
+        os.mkdir(friends_dir)
+    if not os.path.exists(members_dir):
+        os.mkdir(members_dir)
 
     def __init__(self) -> None:
         api_id = int(os.environ.get("api_id"))
